@@ -1,0 +1,17 @@
+const users = []
+
+function newUser(id , username , room){
+    const user = {
+        id,
+        username,
+        room
+    }
+    users.push(user)
+    return user
+}
+
+function getCurrentUser(id){
+    return users.find(users => users.id === id)
+}
+
+module.exports = {newUser , getCurrentUser }
