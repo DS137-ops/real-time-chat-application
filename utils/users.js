@@ -14,4 +14,18 @@ function getCurrentUser(id){
     return users.find(users => users.id === id)
 }
 
-module.exports = {newUser , getCurrentUser }
+function userLeave(id){
+    const index = users.findIndex(user => user.id === id)
+    console.log("index" , index)
+    if(index!== -1){
+        return users.splice(index , 1)[0]
+    }
+}
+function getRoomUsers (room){
+    console.log(1)
+    return users.filter(user => user.room === room)
+}
+
+
+
+    module.exports = {newUser , getCurrentUser ,userLeave ,getRoomUsers }
